@@ -10,3 +10,18 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+puts 'Please enter name'
+
+@testname = gets.chomp
+
+user = Store.create(name: @testname)
+result = user.valid?
+
+@errors = user.errors.messages
+
+@errors.each do |err|
+    puts err
+end
+
+puts 'The entry is invalid'
